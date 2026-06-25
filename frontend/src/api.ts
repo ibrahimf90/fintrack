@@ -1,6 +1,8 @@
 import { Transaction, Summary, NewTransaction, FilterType } from "./types";
 
-const BASE_URL = "/api";
+const BASE_URL = import.meta.env.VITE_API_URL
+  ? import.meta.env.VITE_API_URL + "/api"
+  : "/api";
 
 // ── Fetch all transactions (with optional filters) ─────────────────────────
 export async function fetchTransactions(
